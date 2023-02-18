@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Family Tree Version 2</title>
+    <meta name="description" content="Make your own family tree with php family tree script.">
+    <link rel="icon" href="https://vwebtech.com/familytree2/public/uploads/site/icon.png" sizes="32x32" />
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,900%7CGentium+Basic:400italic&subset=latin,latin">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,300,700">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Font Awseome -->
+    <!-- <link rel="stylesheet" href="css/assets/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="css/toastr.min.css">
+    <!-- JQuery Libraries -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.3.2/css/simple-line-icons.css">
+
+    <link rel="stylesheet" href="css/tree.css?v=1">
+    <link rel="stylesheet" href="css/style.css?v=2">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="js/jquery.min.js"></script>
+
+    <script>var domain = "https://vwebtech.com/familytree2";</script>
+    <meta name="csrf-token" content="BS9O1ErDP5MX52LbV7RYDNarqK2XQuudXJjaf4l5">
+
+</head>
+
+<body class="pt-login">
+    <div class="pt-wrapper">
+        <div class="pt-box pt-tree pt-full">
+            <div class="row" align="center">
+                <h1>Test's Family Tree</h1>
+                <p>test desc</p>
+                <a href="#a" class="btn btn-sm btn-success"
+                    onclick="copyToClipboard('https://vwebtech.com/familytree2/view/32')" title="Copy Tree Link"><i
+                        class="fa fa-copy"></i></a>
+                <a class="btn btn-sm btn-success"
+                    href="whatsapp://send?text=Checkout Test's Family Tree%0Ahttps://vwebtech.com/familytree2/view/32"
+                    title="Share On Whatsapp"><i class="fa fa-whatsapp"></i></a>
+                <a class="btn btn-sm btn-info" href="https://vwebtech.com/familytree2/wall" title="Family Wall"><i
+                        class="fa fa-list"></i></a>
+                <a class="btn btn-sm btn-info" href="https://vwebtech.com/familytree2/admin" title="Admin Panel"><i
+                        class="icons icon-settings"></i></a>
+                <a class="btn btn-sm btn-warning" href="https://vwebtech.com/familytree2/logout"
+                    onclick="event.preventDefault();document.getElementById('logout-form').submit();" title="Logout"><i
+                        class="icons icon-logout logout"></i></a>
+            </div>
+
+
+            <div class="pt-sm">
+
+
+                <div class="tree" id="div">
+                    <ul>
+                        <li><a rel="item-163">
+
+                                <div class="pt-thumb">
+                                    <img src="https://vwebtech.com/familytree2/public/uploads/tree/32/1676327601.png" />
+                                </div>
+                                <strong>İbrahim Hakkı</strong><span class="pt-options">
+                                    <i class="icons icon-pencil tree-edit" rel="163"></i>
+                                    <i class="icons icon-trash tree-delete" onclick="return confirm('Are you sure?')"
+                                        rel="163"></i>
+                                    <i class="icons icon-plus tree-add" rel="163" onclick="setparent(163);"
+                                        data-toggle="modal" data-target="#myModaladd"></i>
+                                </span>
+                            </a>
+                            <ul>
+                                <li><a rel="item-173">
+
+                                        <div class="pt-thumb">
+                                            <img
+                                                src="https://vwebtech.com/familytree2/public/uploads/site/no_profile_pic.jpg" />
+                                        </div>
+                                        <strong>İbrahim Hakkı</strong><span class="pt-options">
+                                            <i class="icons icon-pencil tree-edit" rel="173"></i>
+                                            <i class="icons icon-trash tree-delete"
+                                                onclick="return confirm('Are you sure?')" rel="173"></i>
+                                            <i class="icons icon-plus tree-add" rel="173" onclick="setparent(173);"
+                                                data-toggle="modal" data-target="#myModaladd"></i>
+                                        </span>
+                                    </a></li>
+                                <li><a rel="item-164">
+
+                                        <div class="pt-thumb">
+                                            <img
+                                                src="https://vwebtech.com/familytree2/public/uploads/tree/32/1676327715.png" />
+                                        </div>
+                                        <strong>Ali</strong><span class="pt-options">
+                                            <i class="icons icon-pencil tree-edit" rel="164"></i>
+                                            <i class="icons icon-trash tree-delete"
+                                                onclick="return confirm('Are you sure?')" rel="164"></i>
+                                            <i class="icons icon-plus tree-add" rel="164" onclick="setparent(164);"
+                                                data-toggle="modal" data-target="#myModaladd"></i>
+                                        </span>
+                                    </a>
+                                    <ul>
+                                        <li><a rel="item-165">
+
+                                                <div class="pt-thumb">
+                                                    <img
+                                                        src="https://vwebtech.com/familytree2/public/uploads/tree/32/1676327789.png" />
+                                                </div>
+                                                <strong>Mehmet</strong><span class="pt-options">
+                                                    <i class="icons icon-pencil tree-edit" rel="165"></i>
+                                                    <i class="icons icon-trash tree-delete"
+                                                        onclick="return confirm('Are you sure?')" rel="165"></i>
+                                                    <i class="icons icon-plus tree-add" rel="165"
+                                                        onclick="setparent(165);" data-toggle="modal"
+                                                        data-target="#myModaladd"></i>
+                                                </span>
+                                            </a></li>
+                                        <li><a rel="item-166">
+
+                                                <div class="pt-thumb">
+                                                    <img
+                                                        src="https://vwebtech.com/familytree2/public/uploads/tree/32/1676327829.png" />
+                                                </div>
+                                                <strong>Alper</strong><span class="pt-options">
+                                                    <i class="icons icon-pencil tree-edit" rel="166"></i>
+                                                    <i class="icons icon-trash tree-delete"
+                                                        onclick="return confirm('Are you sure?')" rel="166"></i>
+                                                    <i class="icons icon-plus tree-add" rel="166"
+                                                        onclick="setparent(166);" data-toggle="modal"
+                                                        data-target="#myModaladd"></i>
+                                                </span>
+                                            </a></li>
+                                    </ul>
+                                </li>
+                                <li><a rel="item-167">
+
+                                        <div class="pt-thumb">
+                                            <img
+                                                src="https://vwebtech.com/familytree2/public/uploads/site/no_profile_pic.jpg" />
+                                        </div>
+                                        <strong>asd</strong><span class="pt-options">
+                                            <i class="icons icon-pencil tree-edit" rel="167"></i>
+                                            <i class="icons icon-trash tree-delete"
+                                                onclick="return confirm('Are you sure?')" rel="167"></i>
+                                            <i class="icons icon-plus tree-add" rel="167" onclick="setparent(167);"
+                                                data-toggle="modal" data-target="#myModaladd"></i>
+                                        </span>
+                                    </a>
+                                    <ul>
+                                        <li><a rel="item-172">
+
+                                                <div class="pt-thumb">
+                                                    <img
+                                                        src="https://vwebtech.com/familytree2/public/uploads/site/no_profile_pic.jpg" />
+                                                </div>
+                                                <strong>asd</strong><span class="pt-options">
+                                                    <i class="icons icon-pencil tree-edit" rel="172"></i>
+                                                    <i class="icons icon-trash tree-delete"
+                                                        onclick="return confirm('Are you sure?')" rel="172"></i>
+                                                    <i class="icons icon-plus tree-add" rel="172"
+                                                        onclick="setparent(172);" data-toggle="modal"
+                                                        data-target="#myModaladd"></i>
+                                                </span>
+                                            </a>
+                                            <ul>
+                                                <li><a rel="item-175" class="partner">
+
+                                                        <span class="pt-dead" title="partner">👫</span>
+                                                        <div class="pt-thumb">
+                                                            <img
+                                                                src="https://vwebtech.com/familytree2/public/uploads/site/no_profile_pic.jpg" />
+                                                        </div>
+                                                        <strong>istri</strong><span class="pt-options">
+                                                            <i class="icons icon-pencil tree-edit" rel="175"></i>
+                                                            <i class="icons icon-trash tree-delete"
+                                                                onclick="return confirm('Are you sure?')" rel="175"></i>
+                                                        </span>
+                                                    </a><a rel="item-177" class="partner">
+
+                                                        <span class="pt-dead" title="partner">👫</span>
+                                                        <div class="pt-thumb">
+                                                            <img
+                                                                src="https://vwebtech.com/familytree2/public/uploads/site/no_profile_pic.jpg" />
+                                                        </div>
+                                                        <strong>istri2</strong><span class="pt-options">
+                                                            <i class="icons icon-pencil tree-edit" rel="177"></i>
+                                                            <i class="icons icon-trash tree-delete"
+                                                                onclick="return confirm('Are you sure?')" rel="177"></i>
+                                                        </span>
+                                                    </a><a rel="item-174">
+
+                                                        <div class="pt-thumb">
+                                                            <img
+                                                                src="https://vwebtech.com/familytree2/public/uploads/site/no_profile_pic.jpg" />
+                                                        </div>
+                                                        <strong>anak</strong><span class="pt-options">
+                                                            <i class="icons icon-pencil tree-edit" rel="174"></i>
+                                                            <i class="icons icon-trash tree-delete"
+                                                                onclick="return confirm('Are you sure?')" rel="174"></i>
+                                                            <i class="icons icon-plus tree-add" rel="174"
+                                                                onclick="setparent(174);" data-toggle="modal"
+                                                                data-target="#myModaladd"></i>
+                                                        </span>
+                                                    </a>
+                                                    <ul>
+                                                        <li><a rel="item-176">
+
+                                                                <div class="pt-thumb">
+                                                                    <img
+                                                                        src="https://vwebtech.com/familytree2/public/uploads/site/no_profile_pic.jpg" />
+                                                                </div>
+                                                                <strong>anak2</strong><span class="pt-options">
+                                                                    <i class="icons icon-pencil tree-edit"
+                                                                        rel="176"></i>
+                                                                    <i class="icons icon-trash tree-delete"
+                                                                        onclick="return confirm('Are you sure?')"
+                                                                        rel="176"></i>
+                                                                    <i class="icons icon-plus tree-add" rel="176"
+                                                                        onclick="setparent(176);" data-toggle="modal"
+                                                                        data-target="#myModaladd"></i>
+                                                                </span>
+                                                            </a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a rel="item-171">
+
+                                                <div class="pt-thumb">
+                                                    <img
+                                                        src="https://vwebtech.com/familytree2/public/uploads/site/no_profile_pic.jpg" />
+                                                </div>
+                                                <strong>asda</strong><span class="pt-options">
+                                                    <i class="icons icon-pencil tree-edit" rel="171"></i>
+                                                    <i class="icons icon-trash tree-delete"
+                                                        onclick="return confirm('Are you sure?')" rel="171"></i>
+                                                    <i class="icons icon-plus tree-add" rel="171"
+                                                        onclick="setparent(171);" data-toggle="modal"
+                                                        data-target="#myModaladd"></i>
+                                                </span>
+                                            </a></li>
+                                    </ul>
+                                </li>
+                                <li><a rel="item-170" class="partner">
+
+                                        <span class="pt-dead" title="partner">👫</span>
+                                        <div class="pt-thumb">
+                                            <img
+                                                src="https://vwebtech.com/familytree2/public/uploads/site/no_profile_pic.jpg" />
+                                        </div>
+                                        <strong>istri</strong><span class="pt-options">
+                                            <i class="icons icon-pencil tree-edit" rel="170"></i>
+                                            <i class="icons icon-trash tree-delete"
+                                                onclick="return confirm('Are you sure?')" rel="170"></i>
+                                        </span>
+                                    </a><a rel="item-168">
+
+                                        <div class="pt-thumb">
+                                            <img
+                                                src="https://vwebtech.com/familytree2/public/uploads/site/no_profile_pic.jpg" />
+                                        </div>
+                                        <strong>asdasd</strong><span class="pt-options">
+                                            <i class="icons icon-pencil tree-edit" rel="168"></i>
+                                            <i class="icons icon-trash tree-delete"
+                                                onclick="return confirm('Are you sure?')" rel="168"></i>
+                                            <i class="icons icon-plus tree-add" rel="168" onclick="setparent(168);"
+                                                data-toggle="modal" data-target="#myModaladd"></i>
+                                        </span>
+                                    </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="pt-footer">
+            <div class="pt-container"> Copyright © 2019 <a href="#">Family Tree</a>. All Rights Reserved. </div>
+        </div>
+    </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModaladd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form id="send-details0" method="post" action="https://vwebtech.com/familytree2/addmember"
+                    enctype="multipart/form-data">
+                    <input type="hidden" name="_token" value="BS9O1ErDP5MX52LbV7RYDNarqK2XQuudXJjaf4l5">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Add New member</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="pt-form pt-forms">
+
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab"
+                                        data-toggle="tab">Personal</a></li>
+                                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab"
+                                        data-toggle="tab">Contact</a></li>
+                                <li role="presentation"><a href="#messages" aria-controls="messages" role="tab"
+                                        data-toggle="tab">Biographical</a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="home">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>
+                                                First Name:
+                                                <input type="text" value="" placeholder="Enter first name"
+                                                    name="firstname" required />
+                                            </label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>
+                                                Last Name:
+                                                <input type="text" value="" placeholder="Enter last name"
+                                                    name="lastname" required />
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <label>Gender:</label>
+                                    <label class="pt-inline"><input type="radio" name="gender" value="1" />
+                                        Female</label>
+                                    <label class="pt-inline"><input type="radio" name="gender" value="2" checked />
+                                        Male</label>
+                                    <label class="pt-birth">
+                                        Birth Date:<br />
+                                        <input type="text" value="" placeholder="DD" name="birthday" required />
+                                        <input type="text" value="" placeholder="MM" name="birthmonth" required />
+                                        <input type="text" value="" placeholder="YYYY" name="birthyear" required />
+                                    </label>
+                                    <label class="pt-birth">
+                                        Death Date:<br />
+                                        <input type="text" value="" placeholder="DD" name="deathday" />
+                                        <input type="text" value="" placeholder="MM" name="deathmonth" />
+                                        <input type="text" value="" placeholder="YYYY" name="deathyear" />
+                                    </label>
+                                    <label><input type="checkbox" name="death" value="1" checked /> This person
+                                        is
+                                        living</label>
+                                    <label>
+                                        Relation Type:
+                                        <select name="type">
+                                            <option value="1">Child</option>
+                                            <option value="2">Partner</option>
+                                        </select>
+                                    </label>
+                                    <label>
+                                        Photo:
+                                        <input type="text" value="" placeholder="Enter Photo URL" name="photo" />
+                                    </label>
+                                    <div class="prt-group">
+                                        <!--<label>or</label>
+				<input type="file" name="poll_file">-->
+                                        <input type="file" name="member_img" id="file" class="inputfile" />
+                                        <label for="file"><i class="fa fa-upload"></i> Choose an image from your
+                                            device</label>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="profile">
+                                    <label>
+                                        Email:
+                                        <input type="text" value="" placeholder="Enter Email" name="email" />
+                                    </label>
+                                    <label>
+                                        Facebook / Twitter / Website:
+                                        <input type="text" value="" placeholder="Enter Website" name="site" />
+                                    </label>
+                                    <label>
+                                        Phone:
+                                        <input type="text" value="" placeholder="Enter Home Tel" name="tel" />
+                                    </label>
+                                    <label>
+                                        Whatsapp Number With Country Code ex: 919408301838
+                                        <input type="text" value="" placeholder="Enter Mobile" name="mobile" />
+                                    </label>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="messages">
+                                    <label>
+                                        Birth Place:
+                                        <input type="text" value="" placeholder="Enter Birth Place" name="birthplace" />
+                                    </label>
+                                    <label>
+                                        Death Place:
+                                        <input type="text" value="" placeholder="Enter Death Place" name="deathplace" />
+                                    </label>
+                                    <label>
+                                        Now Living City:
+                                        <input type="text" value="" placeholder="Enter Living City" name="city" />
+                                    </label>
+                                    <label>
+                                        Profession:
+                                        <textarea name="profession" placeholder="Enter Profession"></textarea>
+                                    </label>
+                                    <label>
+                                        Company:
+                                        <textarea name="company" placeholder="Enter Company"></textarea>
+                                    </label>
+                                    <label>
+                                        Interests:
+                                        <textarea name="interests" placeholder="Enter Interests"></textarea>
+                                    </label>
+                                    <label>
+                                        Bio Notes:
+                                        <textarea name="bio" placeholder="Enter Bio Notes"></textarea>
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <!-- <input type="submit" value="Submit" class="btn btn-primary" /> -->
+                        <input type="hidden" name="parent" id="parent" value="" />
+                        <!-- <input type="hidden" name="id" value="32" /> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form id="send-detailedit" method="post" action="https://vwebtech.com/familytree2/editmember"
+                    enctype="multipart/form-data">
+                    <input type="hidden" name="_token" value="BS9O1ErDP5MX52LbV7RYDNarqK2XQuudXJjaf4l5">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Edit member</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="pt-form pt-forms">
+
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#homeedit" aria-controls="homeedit"
+                                        role="tab" data-toggle="tab">Personal</a></li>
+                                <li role="presentation"><a href="#profileedit" aria-controls="profileedit" role="tab"
+                                        data-toggle="tab">Contact</a></li>
+                                <li role="presentation"><a href="#messagesedit" aria-controls="messagesedit" role="tab"
+                                        data-toggle="tab">Biographical</a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="homeedit">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>
+                                                First Name:
+                                                <input type="text" value="" placeholder="Enter first name"
+                                                    name="firstname" required />
+                                            </label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>
+                                                Last Name:
+                                                <input type="text" value="" placeholder="Enter last name"
+                                                    name="lastname" required />
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <label>Gender:</label>
+                                    <label class="pt-inline"><input type="radio" name="gender" value="1" />
+                                        Female</label>
+                                    <label class="pt-inline"><input type="radio" name="gender" value="2" checked />
+                                        Male</label>
+                                    <label class="pt-birth">
+                                        Birth Date:<br />
+                                        <input type="text" value="" placeholder="DD" name="birthday" required />
+                                        <input type="text" value="" placeholder="MM" name="birthmonth" required />
+                                        <input type="text" value="" placeholder="YYYY" name="birthyear" required />
+                                    </label>
+                                    <label class="pt-birth">
+                                        Death Date:<br />
+                                        <input type="text" value="" placeholder="DD" name="deathday" />
+                                        <input type="text" value="" placeholder="MM" name="deathmonth" />
+                                        <input type="text" value="" placeholder="YYYY" name="deathyear" />
+                                    </label>
+                                    <label><input type="checkbox" name="death" value="1" checked /> This person
+                                        is
+                                        living</label>
+                                    <label>
+                                        Relation Type:
+                                        <select name="type">
+                                            <option value="1">Child</option>
+                                            <option value="2">Partner</option>
+                                        </select>
+                                    </label>
+
+                                    <div class="prt-group">
+                                        <!--<label>or</label>
+				<input type="file" name="poll_file">-->
+                                        <input type="file" name="member_img" class="" />
+                                        <label for="file"><i class="fa fa-upload"></i> Choose an image from your
+                                            device</label>
+                                    </div>
+
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="profileedit">
+                                    <label>
+                                        Email:
+                                        <input type="text" value="" placeholder="Enter Email" name="email" />
+                                    </label>
+                                    <label>
+                                        Facebook / Twitter / Website:
+                                        <input type="text" value="" placeholder="Enter Website" name="site" />
+                                    </label>
+                                    <label>
+                                        Home Tel:
+                                        <input type="text" value="" placeholder="Enter Home Tel" name="tel" />
+                                    </label>
+                                    <label>
+                                        Mobile:
+                                        <input type="text" value="" placeholder="Enter Mobile" name="mobile" />
+                                    </label>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="messagesedit">
+                                    <label>
+                                        Birth Place:
+                                        <input type="text" value="" placeholder="Enter Birth Place" name="birthplace" />
+                                    </label>
+                                    <label>
+                                        Death Place:
+                                        <input type="text" value="" placeholder="Enter Death Place" name="deathplace" />
+                                    </label>
+                                    <label>
+                                        Now Living City:
+                                        <input type="text" value="" placeholder="Enter Living City" name="city" />
+                                    </label>
+                                    <label>
+                                        Profession:
+                                        <textarea name="profession" placeholder="Enter Profession"></textarea>
+                                    </label>
+                                    <label>
+                                        Company:
+                                        <textarea name="company" placeholder="Enter Company"></textarea>
+                                    </label>
+                                    <label>
+                                        Interests:
+                                        <textarea name="interests" placeholder="Enter Interests"></textarea>
+                                    </label>
+                                    <label>
+                                        Bio Notes:
+                                        <textarea name="bio" placeholder="Enter Bio Notes"></textarea>
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <!-- <input type="submit" value="Submit" class="btn btn-primary" /> -->
+
+                        <input type="hidden" name="id" id="mid" value="" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myTree" tabindex="-1" role="dialog" aria-labelledby="myTreeLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <form id="logout-form" action="https://vwebtech.com/familytree2/logout" method="POST" style="display: none;">
+        <input type="hidden" name="_token" value="BS9O1ErDP5MX52LbV7RYDNarqK2XQuudXJjaf4l5">
+    </form>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/jquery.livequery.js"></script>
+    <script src="js/custom.js?v=1.3"></script>
+    <!-- Toastr -->
+    <script src="js/toastr.min.js"></script>
+    <script>
+        function setparent(pid) {
+            $("#parent").val(pid);
+        }
+        function copyToClipboard(element) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val(element).select();
+            document.execCommand("copy");
+            $temp.remove();
+            toastr.info('Link Copied');
+        }
+    </script>
+    <script>
+        $("#files").change(function () {
+            filename = this.files[0].name
+            $("#cam").css('color', '#4CAF50');
+
+        });
+    </script>
+
+</body>
+
+</html>

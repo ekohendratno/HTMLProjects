@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="pqbsvRnWOSZyXh0RSjZNGKUVxlFAMz09dbTaJ1kr">
+
+    <title>Login Sekolah Koding</title>
+    <meta name="author" content="@sekolahkoding">
+    <meta name="description"
+        content="Halaman login sekolah koding, website untuk belajar programming, desain dan web development online">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@sekolahkoding">
+    <meta name="twitter:creator" content="@sekolahkoding">
+    <meta name="twitter:title" content="Login Sekolah Koding">
+    <meta name="twitter:url" content="/">
+    <meta name="twitter:description"
+        content="Halaman login sekolah koding, website untuk belajar programming, desain dan web development online">
+    <meta name="twitter:image:src" content="assets/images/hero-image/login.png">
+
+    <meta property="og:title" content="Login Sekolah Koding">
+    <meta property="og:description"
+        content="Halaman login sekolah koding, website untuk belajar programming, desain dan web development online">
+    <meta property="og:image" content="/assets/images/hero-image/login.png">
+
+
+    <!-- Scripts -->
+    <script src="assets/js/app.js"></script>
+
+
+    <!-- Fonts -->
+
+    <!-- Styles -->
+    <link href="assets/css/app.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+
+    <!-- google analytics -->
+</head>
+
+<body class="vsc-initialized">
+    <script>
+        //dark mode //check localstorage
+        if (localStorage.getItem('preferredTheme') == 'dark')
+            setDarkMode(true)
+
+        function setDarkMode(isDark) {
+            if (isDark) {
+                document.body.setAttribute("id", "darkmode");
+                localStorage.setItem('preferredTheme', 'dark');
+            } else {
+                document.body.setAttribute("id", "");
+                localStorage.removeItem('preferredTheme');
+            }
+        }
+    </script>
+
+
+    <nav class="container">
+        <div id="nav-brand">
+            <a href="/"> <img src="assets/images/logo.png" width="50" alt="logo sekolah koding"> </a>
+            <form class="column" action="assets/kelas" method="GET">
+                <input type="search" class="input search" name="query" placeholder="mau belajar apa?">
+            </form>
+        </div>
+        <div id="nav-menu">
+            <div class="nav-item">
+                <a href="/kelas-feed" class="nav-item">Belajar</a>
+                <div class="nav-sub-menu">
+                    <a href="/kelas-feed" class="nav-sub-menu-item">Kelas</a>
+                    <a href="/panduan" class="nav-sub-menu-item">Panduan</a>
+                    <a href="/track" class="nav-sub-menu-item">Perjalanan</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="/nongkrong" class="nav-item">Nongkrong</a>
+                <div class="nav-sub-menu">
+                    <a href="/nongkrong" class="nav-sub-menu-item">Semua</a>
+                    <a href="/forum" class="nav-sub-menu-item">Forum</a>
+                    <a href="/artikel" class="nav-sub-menu-item">Artikel</a>
+                    <a href="/mading" class="nav-sub-menu-item">Mading</a>
+                </div>
+            </div>
+
+            <a href="/login" class="nav-item">Login</a>
+        </div>
+
+        <div class="nav-toggle" onclick="toggleMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <section class="columns hero">
+        </section>
+
+        <main>
+            <div class="columns">
+                <div class="column is-half is-middle">
+                    <h1 class="title">Masuk</h1>
+                    <h2 class="subtitle">Halo.. selamat belajar lagi! <br>Tanam ilmu sekarang, panen di masa depan</h2>
+
+                    <div class="cards">
+                        <form class="form v-group-s" method="POST" action="assets/login">
+                            <input type="hidden" name="_token" value="pqbsvRnWOSZyXh0RSjZNGKUVxlFAMz09dbTaJ1kr">
+                            <div class="is-center v-dist">
+                                <div class="columns h-dist">
+                                    <a class="button is-small is-danger" href="/login/google">Google</a>
+                                    <a class="button is-small is-dark" href="/login/github">Github</a>
+                                    <a class="button is-small is-blueTw" href="/login/twitter">Twitter</a>
+                                </div>
+
+                                <p class="is-small">atau masuk dengan email/username</p>
+                            </div>
+
+                            <div class="input-wrapper ">
+                                <label for="identity" class="label"> Username / Email </label>
+
+                                <input id="identity" placeholder="" name="identity" value="" autocomplete="identity"
+                                    type="" class="input">
+
+                            </div>
+                            <p id="warning_identity" class="warning is-hidden"></p>
+
+
+                            <div class="input-wrapper ">
+                                <label for="password" class="label"> Password </label>
+
+                                <input id="password" placeholder="" name="password" value="" autocomplete="password"
+                                    type="password" class="input">
+
+                            </div>
+                            <p id="warning_password" class="warning is-hidden"></p>
+
+
+                            <div class="field">
+                                <div class="control">
+                                    <label class="checkbox"> <input name="remember" type="checkbox"> Ingat saya </label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="button is-primary">Login</button>
+
+                            <div class="is-center v-dist">
+                                <p><a class="link" href="/password/forget">Lupa Password</a> || <a class="link"
+                                        href="/register">Belum Daftar?</a></p>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="grey-bg">
+        <div class="container">
+            <div class="is-center">
+                <p>© Sekolah Koding 2015 - 2023 </p>
+                <p>Video tutorial web development dan programming dalam bahasa Indonesia.<br>
+                    Luaskan ilmu, luaskan manfaat. </p>
+            </div>
+
+            <div class="columns footer_sitemap is-mobile  v-distance">
+                <div class="column column-reveal">
+                    <h6>Belajar</h6>
+                    <ul>
+                        <li><a href="/kelas">Kelas</a></li>
+                        <li><a href="/panduan">Panduan</a></li>
+                        <li><a href="/track">Perjalanan</a></li>
+                        <li><a href="/belajar">Kenapa belajar koding</a></li>
+                        <li><a href="/premium?from=footer">Premium</a></li>
+                    </ul>
+                </div>
+                <div class="column column-reveal">
+                    <h6>Diskusi</h6>
+                    <ul>
+                        <li> <a href="/nongkrong">Nongkrong</a></li>
+                        <li><a href="/forum">Forum</a></li>
+                        <li><a href="/artikel">Artikel</a></li>
+                        <li><a href="/mading">Mading</a></li>
+                    </ul>
+                </div>
+
+                <div class="column column-reveal">
+                    <h6>Link lainnya</h6>
+                    <ul>
+                        <li><a href="https://halokoding.com/">Buku Halo Koding!</a></li>
+                        <li><a href="https://kodi.ng/">Referensi pemrograman</a></li>
+                        <li><a href="/upacara">Upacara</a></li>
+                        <li><a target="_blank" href="https://anchor.fm/tehataukopi">Podcast TehAtauKopi</a></li>
+                        <li><a target="_blank" href="https://finddev.tools/">List of programming Tools</a> </li>
+                        <li><a target="_blank" href="https://blog.sko.dev/">Blog Koding</a> </li>
+                    </ul>
+                </div>
+
+                <div class="column column-reveal">
+                    <h6>Informasi</h6>
+                    <div class="columns">
+                        <div class="column column-reveal">
+                            <ul>
+                                <li><a href="/faq">FAQ</a></li>
+                                <li><a href="/tentang">Tentang</a></li>
+                                <li><a href="/syarat">Syarat</a></li>
+                                <li><a href="/media">Media</a></li>
+                            </ul>
+                        </div>
+                        <div class="column column-reveal">
+                            <ul>
+                                <li><a href="/testimonial">Kata Member</a></li>
+                                <li><a href="/login">Masuk</a></li>
+                                <li><a href="/register">Daftar</a></li>
+                                <li><a href="/iklan">Iklan</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="is-center">
+
+                <div id="footer_social_media">
+                    <a target="_blank" rel="noreferrer" href="https://www.instagram.com/sekolahkoding"><img
+                            class="icons" width="30" height="30" src="assets//instagram.png"
+                            alt="instagram sekolahkoding" title="instagram"></a>
+                    <a target="_blank" rel="noreferrer" href="https://twitter.com/sekolahkoding"><img class="icons"
+                            width="30" height="30" src="assets//twitter.png" alt="twitter sekolahkoding"
+                            title="twitter"></a>
+                    <a target="_blank" rel="noreferrer" href="https://facebook.com/sekolahkoding"><img class="icons"
+                            width="30" height="30" src="assets//facebook.png" alt="facebook sekolahkoding"
+                            title="facebook"></a>
+                    <a target="_blank" rel="noreferrer" href="https://youtube.com/sekolahkoding"><img class="icons"
+                            width="30" height="30" src="assets//youtube.png" alt="youtube sekolahkoding"
+                            title="youtube"></a>
+                </div>
+
+                <p class="is-medium"> Dibuat dengan cinta di Makassar &amp; Berlin </p>
+
+                <div id="theme" class="is-medium">
+                    <a onclick="setDarkMode(true)" id="darkBtn" class="link"> 🌚<span>Gelap</span></a> /
+                    <a onclick="setDarkMode(false)" id="lightBtn" class="link"> 🌝<span>Terang</span> </a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+
+            //lazy loading image
+            var lazyImg = document.querySelectorAll('img[data-src]');
+
+            lazyLoad();
+            window.onscroll = function () { lazyLoad(); }
+
+            function lazyLoad() {
+                for (var i = 0; i < lazyImg.length; i++) {
+                    if (isElementInViewport(lazyImg[i])) {
+                        if (lazyImg[i].getAttribute('data-src')) {
+                            lazyImg[i].src = lazyImg[i].getAttribute('data-src');
+                            lazyImg[i].removeAttribute('data-src');
+                        }
+                    }
+                }
+                cleanLazyImage();
+            }
+
+            function isElementInViewport(el) {
+                var rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            function cleanLazyImage() {
+                lazyImg = Array.prototype.filter.call(
+                    lazyImg, function (l) {
+                        return l.getAttribute('data-src');
+                    }
+                );
+            }
+        </script>
+
+
+
+        <link rel="stylesheet" href="assets/css/swal2.css">
+
+
+
+    </footer>
+</body>
+
+</html>
